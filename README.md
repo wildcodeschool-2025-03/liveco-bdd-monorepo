@@ -32,6 +32,21 @@ npm run dev
 npm run test
 ```
 
+## Débogage
+
+Nous allons voir des schémas pour comprendre comment fonctionne l'ensemble de notre backend.
+
+![schema](./docs/schema1.png)
+![schema](./docs/schema2.png)
+
+-   Etape 1 : Nous allons TOUJOURS commencer par le serveur, et oui, si ça ne fonctionne pas, alors ce n'est pas la peine de continuer.
+
+-   Etape 2 : Ensuite, nous allons vérifier le lien avec la base de données, car si elle n'est pas connectée, alors nous ne pourrons pas récupérer les données.
+
+![schéma](./docs/schema3.png)
+
+-   Etape 3 : Et pour finir, nous allons vérifier côté front-end si nous avons bien les données que nous attendons.
+
 ## Auteur
 
 👤 **Anthony Gorski**

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import axios from "./services/axios";
 
 type Article = {
 	id: number;
@@ -9,10 +10,21 @@ type Article = {
 function App() {
 	const [articles, setArticles] = useState<Article[]>([]);
 
+	const fetchArticles = async () => {
+		try {
+			const response = await axios.get("/api/articles");
+
+			setArticles(response.data);
+		} catch (error) {
+			console.error("Error fetching articles:", error);
+		}
+	};
+
 	useEffect(() => {
-		fetch("http://localhost:3310/api/articles")
-			.then((res) => res.json())
-			.then((data) => setArticles(data));
+		fetchArticles();
+		return () => {
+			setArticles([]);
+		};
 	}, []);
 
 	return (
