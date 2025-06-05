@@ -1,0 +1,18 @@
+meta {
+  name: POST
+  type: http
+  seq: 4
+}
+
+post {
+  url: http://localhost:3310/api/articles
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "title": "demo depuis bruno",
+    "content": "Youpi ça fonctionne, trop bien 👑"
+  }
+}

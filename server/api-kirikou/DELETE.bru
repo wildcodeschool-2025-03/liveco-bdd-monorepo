@@ -1,0 +1,18 @@
+meta {
+  name: DELETE
+  type: http
+  seq: 6
+}
+
+delete {
+  url: http://localhost:3310/api/articles/2
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "title": "demo bruno",
+    "content": "Youpi ça fonctionne, trop bien 👑"
+  }
+}
